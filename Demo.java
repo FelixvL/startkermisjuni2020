@@ -7,13 +7,27 @@ class Demo {
 		System.out.println("we zijn klaar met het programma");
 	}
 	void programmabedienen() {
-		System.out.println("Welke attractie wilt u een kaartje voor hebben?");
-		Scanner scanner = new Scanner(System.in);
-		String invoer = scanner.nextLine();		
-		System.out.println("u heeft gekozen voor: "+invoer);
+		Kassa kassa = new Kassa();
+		kassa.starten();
 	}
 }
 
+
+class Kassa{
+	Scanner scanner = new Scanner(System.in);	
+	void starten() {
+			boolean doorgaan = true;
+			while(doorgaan) {
+				vraagOmAttractieKeuze();
+			}
+	}
+	void vraagOmAttractieKeuze() {
+		System.out.println("Welke attractie wilt u een kaartje voor hebben?");
+		String invoer = scanner.nextLine();		
+		System.out.println("u heeft gekozen voor: "+invoer);
+	}
+	
+}
 
 
 
