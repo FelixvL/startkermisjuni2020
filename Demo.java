@@ -15,6 +15,9 @@ class Demo {
 
 class Attractie{
 	String naam;
+	Attractie(String deNaam){
+		naam = deNaam;
+	}
 	void draaien() {
 		System.out.println("Ik ben aan het draaien, de attractie: "+ naam);
 	}
@@ -22,7 +25,9 @@ class Attractie{
 
 class Kassa {
 	Scanner scanner = new Scanner(System.in);
-	Attractie a1 = new Attractie();
+	Attractie a1 = new Attractie("Botsauto's");
+	Attractie a2 = new Attractie("Hawaii");
+	Attractie a3 = new Attractie("Spiegelpaleis");
 		
 	void starten() {
 		boolean doorgaan = true;
