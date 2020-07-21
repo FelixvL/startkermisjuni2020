@@ -18,13 +18,19 @@ class Kassa{
 	void starten() {
 			boolean doorgaan = true;
 			while(doorgaan) {
-				vraagOmAttractieKeuze();
+				String deKeuze = vraagOmAttractieKeuze();
+				if(deKeuze.equals("q")) {
+					doorgaan = false;
+				}else {
+					System.out.println("nog een rondje");
+				}
 			}
 	}
-	void vraagOmAttractieKeuze() {
+	String vraagOmAttractieKeuze() {
 		System.out.println("Welke attractie wilt u een kaartje voor hebben?");
 		String invoer = scanner.nextLine();		
 		System.out.println("u heeft gekozen voor: "+invoer);
+		return invoer;
 	}
 	
 }
