@@ -42,7 +42,7 @@ class Kassa {
 				if(deKeuze.equals("2")) {
 					a2.draaien();
 				}
-				if(deKeuze.equals("3")) {
+				if(deKeuze.equals("3")) { 
 					a3.draaien();
 				}
 		
