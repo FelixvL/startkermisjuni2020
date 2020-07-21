@@ -9,27 +9,34 @@ class Demo {
 
 	void programmabedienen() {
 		Kassa kassa = new Kassa();
-		kassa.starten("hoi allemaal");  // argument string // signature
+		kassa.starten();  // argument string // signature
+		System.out.println(kassa.a1.omzet + " omgezet door "+ kassa.a1.naam);
+		System.out.println(kassa.a2.omzet + " omgezet door "+ kassa.a2.naam);
+		System.out.println(kassa.a3.omzet + " omgezet door "+ kassa.a3.naam);
 	}
 }
 
 class Attractie{
 	String naam;
-	Attractie(String denaam){
+	int prijs;
+	int omzet;
+	Attractie(String denaam, int prijs){
 		naam = denaam;
+		this.prijs = prijs;
 	}
 	void draaien() {
+		omzet += prijs;
 		System.out.println("Ik ben aan het draaien, de attractie: "+ naam);
 	}
 }
 
 class Kassa {
 	Scanner scanner = new Scanner(System.in);
-	Attractie a1 = new Attractie("Botsauto's");
-	Attractie a2 = new Attractie("Hawai");
-	Attractie a3 = new Attractie("Spiegelpaleis");
+	Attractie a1 = new Attractie("Botsauto's", 3);
+	Attractie a2 = new Attractie("Hawai", 6);
+	Attractie a3 = new Attractie("Spiegelpaleis", 9);
 		
-	void starten(String in) { // parameter   // signature
+	void starten() { // parameter   // signature
 		boolean doorgaan = true;
 		while (doorgaan) {
 			String deKeuze = vraagOmAttractieKeuze();
